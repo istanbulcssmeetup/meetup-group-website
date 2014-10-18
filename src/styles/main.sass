@@ -38,6 +38,7 @@ nav.main
   padding:                20px
   text-align:             center
   z-index:                50
+  white-space:            nowrap
 
   a
     color:                #fff
@@ -60,7 +61,7 @@ section.introduction
     background-size:      100% 100%
     color:                transparent
     margin:               0 0 30px
-    +size(233px, 74px)
+    +size(234px, 74px)
 
   .join-button
     display:              block
@@ -114,7 +115,7 @@ section.about
   article
     position:             relative
     left:                 50%
-    margin:               90px 0 40px -116px
+    margin:               90px 0 90px -116px
     max-width:            600px
     width:                calc(50% - 26px)
 
@@ -161,13 +162,18 @@ section.sponsors
     color:                transparent
     width:                45%
     float:                left
-    margin-bottom:        10%
+    margin-bottom:        7%
 
     &:nth-of-type(2n)
       margin-left:        10%
 
     &.github
       background:         url($images-path + "/github.svg") no-repeat center center
+      background-size:    100% 100%
+      padding-bottom:     6%
+
+    &.interacthings
+      background:         url($images-path + "/interacthings.svg") no-repeat center center
       background-size:    100% 100%
       padding-bottom:     6%
 
