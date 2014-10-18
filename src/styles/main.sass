@@ -174,8 +174,11 @@ section.sponsors
 
     &.interacthings
       background:         url($images-path + "/interacthings.svg") no-repeat center center
-      background-size:    100% 100%
-      padding-bottom:     6%
+      @extend .github
+
+    &.sonsuzdongu  
+      @extend .github
+      background:         url($images-path + "/sonsuzdongu.svg") no-repeat center center
 
 section.contact
   article

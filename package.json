@@ -3,16 +3,9 @@
   "version": "0.0.1",
   "description": "CSS Istanbul Meetup Website",
   "contributors": [
-    {
-      "name": "Burak Can",
-      "email": "neoberg@gmail.com"
-    },
-    {
-      "name": "Nesrin Kalender",
-      "email": "kalendernesrin@gmail.com"
-    }
+    "Burak Can <neoberg@gmail.com>",
+    "Nesrin Kalender <kalendernesrin@gmail.com>"
   ],
-
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-concurrent": "^1.0.0",
@@ -24,5 +17,19 @@
     "grunt-include-replace": "^2.0.0",
     "grunt-includes": "^0.4.5",
     "grunt-spritesmith": "^2.1.1"
-  }
+  },
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/istanbulcssmeetup/meetup-group-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/istanbulcssmeetup/meetup-group-website/issues"
+  },
+  "homepage": "https://github.com/istanbulcssmeetup/meetup-group-website"
 }
