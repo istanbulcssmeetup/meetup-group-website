@@ -2,6 +2,8 @@
 @import 'basicss'
 @import "compass/utilities/general/clearfix"
 @import "compass/css3/transform"
+@import "compass/css3/filter"
+@import "compass/css3/animation"
 @import 'web-fonts'
 @import 'sprite'
 
@@ -10,7 +12,6 @@
   height:                 $height
 
 =striped-bg()
-  background-color: #fff
   @include background-image(linear-gradient(-45deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent))
   background-size: 20px 20px
 
@@ -23,6 +24,15 @@ $web-fonts-protocol: "http"
 .clearfix
   +pie-clearfix
 
++keyframes(scrollAnim)
+  0%
+    opacity:             0
+    -webkit-transform:   translateY(-50vh)
+
+  100%
+    opacity:             1
+    -webkit-transform:   translateX(0)
+
 body
   font-family:            'Open Sans', sans-serif
   font-weight:            400
@@ -30,30 +40,47 @@ body
   letter-spacing:         .05em
   line-height:            1.4em
   color:                  #000
+  +size(100%, 100vh)
 
-nav.main
-  position:               fixed
-  top:                    0
-  right:                  0
-  padding:                20px
-  text-align:             center
-  z-index:                50
-  white-space:            nowrap
+main
+  +animation(scrollAnim 1s ease)
 
-  a
-    color:                #fff
+// nav.main
+//   position:               fixed
+//   top:                    0
+//   right:                  0
+//   padding:                20px
+//   text-align:             center
+//   z-index:                50
+//   white-space:            nowrap
 
-    & ~ a
-      margin-left:        20px
+//   a
+//     color:                #fff
+
+//     & ~ a
+//       margin-left:        20px
+
+// .nav-band
+//   content:              ''
+//   display:              block
+//   position:             fixed
+//   z-index:              -1
+//   top:                  0
+//   left:                 0
+//   background:           #000
+//   +size(100%, 60px)
 
 section.introduction
-  background:             url($images-path + "/intro-bg.jpg") no-repeat center center
+  background:             url($images-path + "/intro-bg.jpg") no-repeat center center #000
   background-size:        cover
   text-align:             center
   color:                  #fff
   font-weight:            200
   padding:                calc((100vh - 262px)/2) 34px 0
   +size(100%, 100vh)
+
+  > *
+    +animation(scrollAnim .5s ease)
 
   .logo
     display:              inline-block
@@ -102,7 +129,6 @@ section.introduction ~ section
     content:              ""
     display:              block
     position:             absolute
-    top:                  0
     left:                 0
     +size(50%, 20px)
     +striped-bg()
@@ -125,7 +151,7 @@ section.about
 
 section.venue
   article
-    background:           url($images-path + "/venue-bg.jpg") no-repeat center center
+    background:           url($images-path + "/venue-bg.jpg") no-repeat center center #000
     background-size:      cover
     text-align:           center
     color:                #fff
@@ -163,6 +189,9 @@ section.sponsors
     width:                45%
     float:                left
     margin-bottom:        7%
+    margin-top:           7%
+    position:             relative
+    z-index:              -2
 
     &:nth-of-type(2n)
       margin-left:        10%
@@ -176,9 +205,10 @@ section.sponsors
       background:         url($images-path + "/interacthings.svg") no-repeat center center
       @extend .github
 
-    &.sonsuzdongu  
+    &.sonsuzdongu
       @extend .github
       background:         url($images-path + "/sonsuzdongu.svg") no-repeat center center
+      padding-bottom:     15%
 
 section.contact
   article
