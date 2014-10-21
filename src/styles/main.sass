@@ -170,22 +170,27 @@ section.sponsors
     margin-top:           7%
     position:             relative
     z-index:              -2
+    background-size:      contain
+    background-repeat:    no-repeat
+    background-position:  center center
 
     &:nth-of-type(2n)
       margin-left:        10%
 
     &.github
-      background:         url($images-path + "/github.svg") no-repeat center center
-      background-size:    100% 100%
+      background-image:   url($images-path + "/github.svg")
       padding-bottom:     6%
 
+    &.koding
+      background-image:   url($images-path + "/koding.svg")
+      padding-bottom:     8%
+
     &.interacthings
-      background:         url($images-path + "/interacthings.svg") no-repeat center center
-      @extend .github
+      background-image:   url($images-path + "/interacthings.svg")
+      padding-bottom:     7%
 
     &.sonsuzdongu
-      @extend .github
-      background:         url($images-path + "/sonsuzdongu.svg") no-repeat center center
+      background-image:   url($images-path + "/sonsuzdongu.svg")
       padding-bottom:     15%
 
 section.contact
