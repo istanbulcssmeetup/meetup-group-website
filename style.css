@@ -876,20 +876,27 @@ section.sponsors figure {
   margin-top: 7%;
   position: relative;
   z-index: -2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 section.sponsors figure:nth-of-type(2n) {
   margin-left: 10%;
 }
-section.sponsors figure.github, section.sponsors figure.interacthings, section.sponsors figure.sonsuzdongu {
-  background: url("./images/github.svg") no-repeat center center;
-  background-size: 100% 100%;
+section.sponsors figure.github {
+  background-image: url("./images/github.svg");
   padding-bottom: 6%;
 }
+section.sponsors figure.koding {
+  background-image: url("./images/koding.svg");
+  padding-bottom: 8%;
+}
 section.sponsors figure.interacthings {
-  background: url("./images/interacthings.svg") no-repeat center center;
+  background-image: url("./images/interacthings.svg");
+  padding-bottom: 7%;
 }
 section.sponsors figure.sonsuzdongu {
-  background: url("./images/sonsuzdongu.svg") no-repeat center center;
+  background-image: url("./images/sonsuzdongu.svg");
   padding-bottom: 15%;
 }
 
