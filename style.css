@@ -829,6 +829,9 @@ section.about p.emphasize {
   font-weight: 600;
   margin-bottom: 15px;
 }
+section.about a {
+  text-decoration: underline;
+}
 
 section.venue article {
   background: url("./images/venue-bg.jpg") no-repeat center center #000;
