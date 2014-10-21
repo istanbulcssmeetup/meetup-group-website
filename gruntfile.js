@@ -1,12 +1,10 @@
 module.exports = function(grunt) {
-  var _scripts          = require('./src/scripts/includes.js');
   var _serve            = grunt.option('serve') || false;
-  var _devTasks         = ['sprite', 'sass:dev', 'concat', 'includes', 'copy', 'concurrent'];
+  var _devTasks         = ['sprite', 'sass:dev', 'includes', 'copy', 'concurrent'];
   var _concurrentTasks  = ['watch']
   var _watcherTasks     = {
     htmls               : ['includes'],
     sprites             : ['sprite'],
-    scripts             : ['refreshScriptIncludes', 'concat'],
     styles              : ['sass:dev'],
     images              : ['copy:images']
   }
@@ -65,17 +63,6 @@ module.exports = function(grunt) {
       }
     },
 
-    concat          : {
-      options       : {
-        seperator   : ';',
-        sourceMap   : true
-      },
-      scripts       : {
-        src         : _scripts,
-        dest        : './dist/script.js'
-      }
-    },
-
     sprite          : {
       all           : {
         src         : ['./src/images/sprite/*.png'],
@@ -112,10 +99,6 @@ module.exports = function(grunt) {
         files       : ['./src/images/**/*', '!./src/images/sprite/*'],
         tasks       : _watcherTasks.images
       },
-      scripts       : {
-        files       : _scripts,
-        tasks       : _watcherTasks.scripts
-      },
       styles        : {
         files       : ['./src/styles/main.sass'],
         tasks       : _watcherTasks.styles
@@ -124,7 +107,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-includes');
@@ -136,8 +118,4 @@ module.exports = function(grunt) {
   grunt.registerTask('dist',  []);
   grunt.registerTask('clear', []);
 
-  grunt.registerTask('refreshScriptIncludes', '', function(){
-    console.log("Refreshing script includes...");
-    _scripts        = require('./src/scripts/includes.js');
-  });
 }

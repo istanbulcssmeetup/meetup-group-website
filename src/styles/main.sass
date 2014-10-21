@@ -45,31 +45,6 @@ body
 main
   +animation(scrollAnim 1s ease)
 
-// nav.main
-//   position:               fixed
-//   top:                    0
-//   right:                  0
-//   padding:                20px
-//   text-align:             center
-//   z-index:                50
-//   white-space:            nowrap
-
-//   a
-//     color:                #fff
-
-//     & ~ a
-//       margin-left:        20px
-
-// .nav-band
-//   content:              ''
-//   display:              block
-//   position:             fixed
-//   z-index:              -1
-//   top:                  0
-//   left:                 0
-//   background:           #000
-//   +size(100%, 60px)
-
 section.introduction
   background:             url($images-path + "/intro-bg.jpg") no-repeat center center #000
   background-size:        cover
@@ -148,6 +123,9 @@ section.about
   p.emphasize
     font-weight:          600
     margin-bottom:        15px
+
+  a
+    text-decoration:      underline
 
 section.venue
   article
