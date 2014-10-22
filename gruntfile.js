@@ -8,6 +8,7 @@ module.exports = function(grunt) {
     styles              : ['sass:dev'],
     images              : ['copy:images']
   }
+  var _publishTasks     = ['sprite', 'sass:dev', 'includes', 'copy', 'gh-pages']
 
   if(_serve){ _concurrentTasks.push('connect') }
 
@@ -35,6 +36,14 @@ module.exports = function(grunt) {
         cwd         : './src/vendor',
         src         : ['**/*'],
         dest        : './dist/vendor/'
+      },
+      cname         : {
+        files       : [{
+          expand    : true,
+          cwd       : './src',
+          src       : 'CNAME',
+          dest      : './dist/'
+        }]
       }
     },
 
@@ -86,6 +95,13 @@ module.exports = function(grunt) {
       }
     },
 
+    'gh-pages'      : {
+      options       : {
+        base        : 'dist'
+      },
+      src           : ['**']
+    },
+
     watch           : {
       htmls         : {
         files       : ['./src/htmls/**/*.html'],
@@ -113,9 +129,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('dev',   _devTasks);
-  grunt.registerTask('dist',  []);
-  grunt.registerTask('clear', []);
+  grunt.registerTask('publish',  _publishTasks);
 
 }
