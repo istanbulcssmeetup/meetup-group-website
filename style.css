@@ -829,7 +829,7 @@ section.about p.emphasize {
   font-weight: 600;
   margin-bottom: 15px;
 }
-section.about p.emphasize b {
+section.about p.emphasize i {
   text-decoration: line-through;
 }
 section.about a {
