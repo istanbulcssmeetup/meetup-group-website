@@ -893,10 +893,14 @@ section.sponsors figure.koding {
 }
 section.sponsors figure.interacthings {
   background-image: url("./images/interacthings.svg");
-  padding-bottom: 7%;
+  padding-bottom: 15%;
 }
 section.sponsors figure.sonsuzdongu {
   background-image: url("./images/sonsuzdongu.png");
+  padding-bottom: 15%;
+}
+section.sponsors figure.okulbilisim {
+  background-image: url("./images/okulbilisim.png");
   padding-bottom: 15%;
 }
 
