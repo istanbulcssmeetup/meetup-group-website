@@ -829,6 +829,9 @@ section.about p.emphasize {
   font-weight: 600;
   margin-bottom: 15px;
 }
+section.about p.emphasize b {
+  text-decoration: line-through;
+}
 section.about a {
   text-decoration: underline;
 }
