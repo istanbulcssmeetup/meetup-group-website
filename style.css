@@ -903,6 +903,14 @@ section.sponsors figure.okulbilisim {
   background-image: url("./images/okulbilisim.png");
   padding-bottom: 15%;
 }
+section.sponsors figure.hokka {
+  background-image: url("./images/hokka.png");
+  padding-bottom: 15%;
+}
+section.sponsors figure.phpkonf {
+  background-image: url("./images/phpkonf.png");
+  padding-bottom: 15%;
+}
 
 section.contact article {
   position: relative;
