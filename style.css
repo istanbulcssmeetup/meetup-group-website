@@ -953,4 +953,9 @@ section.contact .person a {
   display: block;
 }
 
+.winners ul {
+  float: left;
+  margin-right: 25%;
+}
+
 /*# sourceMappingURL=style.css.map */
